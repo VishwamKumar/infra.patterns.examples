@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Authors>Vishwa Kumar</Authors>
+	<Company>Vishwam</Company>
+	<Product>WeatherApp</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\VishwamKumar\Vishwam.RedisLibrary.Caching\Vishwam.RedisLibrary.Caching.csproj" />
+   </ItemGroup>
+
+</Project>
