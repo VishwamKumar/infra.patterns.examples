@@ -5,8 +5,6 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp.RestApi.UsingRedisCache", "WeatherApp.RestApi.UsingRedisCache.csproj", "{0FE0CE70-5F5B-4BC8-807B-B4657F98DF8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vishwam.RedisLibrary.Caching", "..\..\VishwamKumar\Vishwam.RedisLibrary.Caching\Vishwam.RedisLibrary.Caching.csproj", "{23BA98FC-B79F-4B39-A8D7-CB4EF826F859}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{0FE0CE70-5F5B-4BC8-807B-B4657F98DF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE0CE70-5F5B-4BC8-807B-B4657F98DF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE0CE70-5F5B-4BC8-807B-B4657F98DF8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23BA98FC-B79F-4B39-A8D7-CB4EF826F859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23BA98FC-B79F-4B39-A8D7-CB4EF826F859}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23BA98FC-B79F-4B39-A8D7-CB4EF826F859}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23BA98FC-B79F-4B39-A8D7-CB4EF826F859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
