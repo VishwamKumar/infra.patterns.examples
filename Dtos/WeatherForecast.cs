@@ -1,4 +1,4 @@
-namespace RedisWeatherService.Dtos
+namespace WeatherApp.RestApi.UsingRedisCache.Dtos
 {
     public class WeatherForecast
     {
