@@ -1,4 +1,4 @@
-﻿namespace WeatherApp.RestApi.UsingRedisCache.Dtos;
+﻿namespace WeatherApp.RestApi.RedisCache.Dtos;
 
 public class GetWeatherForecastResponse
 {

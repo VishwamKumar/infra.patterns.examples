@@ -1,5 +1,5 @@
 
-namespace WeatherApp.RestApi.UsingRedisCache.Controllers;
+namespace WeatherApp.RestApi.RedisCache.Controllers;
 
 [ApiController]
 [Route("[controller]")]
