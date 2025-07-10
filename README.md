@@ -50,7 +50,7 @@ cd weather-app.infrastructure.rest-apis
 
 ## 📂 Folder Structure
 
-  weather-app.infrastructure.rest-apis/
+  weather-app.infra-patterns.rest-apis/
       ├── WeatherApp.RestApi.RedisCache/
       └── WeatherApp.RestApi.RabbitMQ/
 
