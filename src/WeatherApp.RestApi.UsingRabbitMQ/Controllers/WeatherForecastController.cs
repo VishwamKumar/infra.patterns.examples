@@ -1,23 +1,14 @@
 
-namespace WeatherApp.RestApi.RedisCache.Controllers;
+namespace WeatherApp.RestApi.UsingRabbitMQ.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController(IRedisCacheService redisCacheService,
+public class WeatherForecastController(IRabbitMqService rabbitMqService,
     ILogger<WeatherForecastController> logger) : ControllerBase
 {  
     [HttpGet("{city}")]
     public async Task<GetWeatherForecastResponse> Get(string city)
     {
-        var cacheKey = $"weather-{city}";
-        var cachedWeather = await redisCacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
-
-        if (cachedWeather!=null)
-        {
-            return cachedWeather;
-        }
-
-        // Simulate fetching weather data from an external service
         IEnumerable<WeatherForecast> weatherForecastData= GetWeatherForecastData();
         GetWeatherForecastResponse weatherForecastRespData = new()
                         {
@@ -25,10 +16,15 @@ public class WeatherForecastController(IRedisCacheService redisCacheService,
                             ForecastTime = DateTime.Now,
                             WeatherForecasts = weatherForecastData
                         };
-           
-        // Cache the weather data
-        await redisCacheService.SetAsync(cacheKey, weatherForecastRespData, TimeSpan.FromMinutes(10));
-        
+
+        // Add  weather data in Q
+        string jsonString = JsonSerializer.Serialize(weatherForecastRespData);
+        await rabbitMqService.PublishAsync(jsonString);
+        weatherForecastRespData.RabbitMqSendStatus = "Message Sent to RabbitMq";
+
+        //Read the Message From Q
+        var message = await rabbitMqService.ConsumeAsync();
+        weatherForecastRespData.RabbitMqReceivedStatus = $"Message Received {message}";
         return weatherForecastRespData;
     }
 
