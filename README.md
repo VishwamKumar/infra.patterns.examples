@@ -17,8 +17,10 @@ Vishwa is the primary developer and architect of this example app, responsible f
 
 | Project | Description |
 |--------|-------------|
+| `WeatherApp.RestApi.UsingBackgroundService` | Implements a background service for polling weather data at configurable intervals, with optional API-based triggering. |
 | `WeatherApp.RestApi.RedisCache` | Implements Redis caching to store and retrieve weather data for optimized performance. |
 | `WeatherApp.RestApi.RabbitMQ`   | Implements RabbitMQ-based message queueing to asynchronously publish and process weather updates. |
+
 
 Each project is **self-contained** and includes its own `.sln` file for independent testing.
 
@@ -51,8 +53,9 @@ cd weather-app.infrastructure.rest-apis
 ## 📂 Folder Structure
 
   weather-app.infra-patterns.rest-apis/
-      ├── WeatherApp.RestApi.RedisCache/
-      └── WeatherApp.RestApi.RabbitMQ/
+      ├── WeatherApp.RestApi.UsingBackgroundService/
+      ├── WeatherApp.RestApi.UsingRedisCache/
+      └── WeatherApp.RestApi.UsingRabbitMQ/
 
 
 ## 🛠️ Tech Stack
