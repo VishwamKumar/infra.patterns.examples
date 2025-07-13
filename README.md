@@ -29,7 +29,7 @@ Each project is **self-contained** and includes its own `.sln` file for independ
 ### 🔁 Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/weather-app.infrastructure.rest-apis.git
+git clone https://github.com/vishwamkumar/weather-app.infrastructure.rest-apis.git
 cd weather-app.infrastructure.rest-apis
 
 
