@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
-    <PackageReference Include="Vishwam.Caching.Redis" Version="0.0.5" />
+    <PackageReference Include="Vishwam.Caching.Redis" Version="0.0.10" />
   </ItemGroup>
 
 </Project>
