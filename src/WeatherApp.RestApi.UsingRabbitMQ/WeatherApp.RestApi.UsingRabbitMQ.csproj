@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
-    <PackageReference Include="Vishwam.Queuing.RabbitMQ" Version="0.0.6" />
+    <PackageReference Include="Vishwam.Queuing.RabbitMQ" Version="0.0.8" />
   </ItemGroup>
 
 </Project>
