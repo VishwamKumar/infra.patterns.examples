@@ -1,0 +1,6 @@
+@WeatherApp.RestApi.UsingSerilog_HostAddress = http://localhost:5256
+
+GET {{WeatherApp.RestApi.UsingSerilog_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
