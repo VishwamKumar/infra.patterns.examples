@@ -1,5 +1,6 @@
 ﻿@page "/counter"
 @rendermode InteractiveServer
+@inject ILogTypeLogger<Counter> logger
 
 <PageTitle>Counter</PageTitle>
 
@@ -10,11 +11,12 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private int currentCount = 0;
+    private int currentCount = 0;    
 
     private void IncrementCount()
     {
-        Log.Logger.ForContext("LogType", "Application").Information("Increasing Counter: {counter}", currentCount);
+        logger.Info(LogType.Application, "Increasing Counter: {counter}", currentCount);
+        //Log.Logger.ForContext("LogType", "Application").Information("Increasing Counter: {counter}", currentCount);
         currentCount++;
     }
 }

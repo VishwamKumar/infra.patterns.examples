@@ -1,5 +1,6 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
+@inject ILogTypeLogger<Counter> logger
 
 <PageTitle>Weather</PageTitle>
 
@@ -43,7 +44,8 @@ else
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);
-        Log.Logger.ForContext("LogType", "Application").Information("Attempting to Get Weather data");
+        logger.Info(LogType.Application, "Attempting to Get Weather data: {datetime}", DateTime.Now.ToString());
+        //Log.Logger.ForContext("LogType", "Application").Information("Attempting to Get Weather data");
 
         var startDate = DateOnly.FromDateTime(DateTime.Now);
         var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
