@@ -2,6 +2,7 @@
 var builder = WebApplication.CreateBuilder(args)
                             .AddSerilogLogging();
 
+builder.Services.AddLogTypeLogger();
 
 try
 {

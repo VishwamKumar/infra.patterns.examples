@@ -8,7 +8,7 @@
 
   <ItemGroup>
 	<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
-    <PackageReference Include="Vishwam.Logging.Serilog" Version="1.0.5" />
+	<PackageReference Include="Vishwam.Logging.Slog" Version="1.0.6" />
   </ItemGroup>
 
 </Project>
