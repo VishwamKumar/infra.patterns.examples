@@ -1,4 +1,4 @@
-# 🌦️ Weather App – Infrastructure with Redis & RabbitMQ (REST APIs)
+# 🌦️ Weather App – Infrastructure with Redis, RabbitMQ and Serilog 
 
 This repository demonstrates infrastructure-focused patterns using **Redis for caching** , **RabbitMQ for messaging** and **Serilog for logging** in .NET REST APIs. These are built around a simplified Weather App use case, showing how infrastructure concerns can be modularized and cleanly integrated.
 
@@ -6,6 +6,7 @@ This repository demonstrates infrastructure-focused patterns using **Redis for c
 # Authors
 
 ## Vishwa Kumar
+
 - **Email:** vishwa@vishwa.me
 - **GitHub:** [Vishwam](https://github.com/vishwamkumar)
 - **LinkedIn:** [Vishwa Kumar](https://www.linkedin.com/in/vishwamohan)
