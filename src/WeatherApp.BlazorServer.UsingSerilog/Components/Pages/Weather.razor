@@ -44,17 +44,25 @@ else
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);
-        logger.Info(LogType.Application, "Attempting to Get Weather data: {datetime}", DateTime.Now.ToString());
-        //Log.Logger.ForContext("LogType", "Application").Information("Attempting to Get Weather data");
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        try
         {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
+
+            logger.Info(LogType.Application, "Attempting to Get Weather data: {datetime}", DateTime.Now.ToString());
+            //Log.Logger.ForContext("LogType", "Application").Information("Attempting to Get Weather data");
+
+            var startDate = DateOnly.FromDateTime(DateTime.Now);
+            var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+            forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = startDate.AddDays(index),
+                    TemperatureC = Random.Shared.Next(-20, 55),
+                    Summary = summaries[Random.Shared.Next(summaries.Length)]
+                }).ToArray();
+        }         
+        catch (Exception ex)
+        {
+            logger.Error(LogType.Application, ex, "Error while getting weather data");           
+        }
     }
 
     private class WeatherForecast

@@ -1,6 +1,5 @@
-var builder = WebApplication.CreateBuilder(args)
-                            .AddSerilogLogging();
-builder.Services.AddLogTypeLogger();
+var builder = WebApplication.CreateBuilder(args);
+                           
 try
 {
     Log.ForContext("LogType", "Application").Information("Application started.");
