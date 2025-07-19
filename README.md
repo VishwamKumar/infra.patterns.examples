@@ -1,4 +1,4 @@
-# 🌦️ Weather App – Infrastructure with Redis, RabbitMQ and Serilog 
+# 🌦️ Weather App – Infrastructure with Redis, RabbitMQ, Azure Key Vault and Serilog 
 
 This repository demonstrates infrastructure-focused patterns using **Redis for caching** , **RabbitMQ for messaging**, **Azure Key Vault for secrets**  and **Serilog for logging** in .NET REST APIs or Blazor App. These are built around a simplified Weather App use case, showing how infrastructure concerns can be modularized and cleanly integrated.
 
