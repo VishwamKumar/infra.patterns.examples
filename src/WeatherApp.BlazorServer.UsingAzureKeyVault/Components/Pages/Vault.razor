@@ -1,0 +1,30 @@
+﻿@page "/vault"
+@rendermode InteractiveServer
+@inject SecretService SecretSvc
+
+<PageTitle>Vault Info</PageTitle>
+
+<h1>Get Key Vault Info</h1>
+
+<p role="status">Connection String: @connString</p>
+
+<button class="btn btn-primary" @onclick="GetKeVaultInfoAsync">Click me</button>
+
+@code {
+    private string connString = "CLICK TO GET DATA";
+
+    public async Task GetKeVaultInfoAsync()
+    {
+        try
+        {
+            // Call the service to get the secret value
+            connString = await SecretSvc.GetSecretValueAsync("SqlConnectionString") ?? "NA";
+        }
+        catch (Exception ex)
+        {
+            // Handle any exceptions that may occur
+            connString = $"Error: {ex.Message}";
+        }
+       
+    }
+}
