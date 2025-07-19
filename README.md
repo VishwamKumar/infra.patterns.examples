@@ -1,6 +1,6 @@
-# 🌦️ Weather App – Infrastructure with Redis, RabbitMQ and Serilog 
+# 🌦️ Weather App – Infrastructure with Redis, RabbitMQ, Azure Key Vault and Serilog 
 
-This repository demonstrates infrastructure-focused patterns using **Redis for caching** , **RabbitMQ for messaging** and **Serilog for logging** in .NET REST APIs. These are built around a simplified Weather App use case, showing how infrastructure concerns can be modularized and cleanly integrated.
+This repository demonstrates infrastructure-focused patterns using **Redis for caching** , **RabbitMQ for messaging**, **Azure Key Vault for secrets**  and **Serilog for logging** in .NET REST APIs or Blazor App. These are built around a simplified Weather App use case, showing how infrastructure concerns can be modularized and cleanly integrated.
 
 ---
 # Authors
@@ -22,7 +22,8 @@ Vishwa is the primary developer and architect of this example app, responsible f
 | `WeatherApp.RestApi.RedisCache` | Implements Redis caching to store and retrieve weather data for optimized performance. |
 | `WeatherApp.RestApi.RabbitMQ`   | Implements RabbitMQ-based message queueing to asynchronously publish and process weather updates. |
 | `WeatherApp.RestApi.Serilog`   | Implements Serilog to log app log, transaction log and custom logs in a REST API. |
-| `WeatherApp.BlazorApp.Serilog`   | Implements Serilog to log app log, transaction log and custom logs in a Blazor Web App. |
+| `WeatherApp.BlazorApp.UsingSerilog`   | Implements Serilog to log app log, transaction log and custom logs in a Blazor Web App. |
+| `WeatherApp.BlazorApp.UsingAzureKeyVault`   | Implements Azure Key Vault to get stored secrets, to be used into a sample Blazor Web App. |
 
 
 Each project is **self-contained** and includes its own `.sln` file for independent testing.
@@ -60,7 +61,8 @@ cd weather-app.infrastructure.rest-apis
       ├── WeatherApp.RestApi.UsingRedisCache/
       ├── WeatherApp.RestApi.UsingRabbitMQ/
       ├── WeatherApp.RestApi.UsingSerilog/
-      └── WeatherApp.BlazorServer.UsingSerilog/
+      ├── WeatherApp.BlazorServer.UsingSerilog/
+      └── WeatherApp.BlazorServer.UsingAzureKeyVault/
 
 
 ## 🛠️ Tech Stack
@@ -70,6 +72,7 @@ cd weather-app.infrastructure.rest-apis
   3. Redis (via StackExchange.Redis)
   4. RabbitMQ (via RabbitMQ.Client)
   5. Serilog
+  6. Azure Key Vault
 
 ---
 ## License
