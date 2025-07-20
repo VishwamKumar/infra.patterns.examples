@@ -11,4 +11,12 @@
 	<PackageReference Include="Vishwam.Logging.Slog" Version="1.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\vishwam.components.shared\src\Vishwam.Logging.SLog\Vishwam.Logging.Slog.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
 </Project>

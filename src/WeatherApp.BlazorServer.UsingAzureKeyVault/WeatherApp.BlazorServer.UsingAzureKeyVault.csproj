@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vishwam.Secrets.AzureKeyVault" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\vishwam.components.shared\src\Vishwam.Secrets.AzureKeyVault\Vishwam.Secrets.AzureKeyVault.csproj" />
+    <PackageReference Include="Vishwam.Secrets.AzureKeyVault" Version="1.0.9" />
   </ItemGroup>
 
 </Project>
