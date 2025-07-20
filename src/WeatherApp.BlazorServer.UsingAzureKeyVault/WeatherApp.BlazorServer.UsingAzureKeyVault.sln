@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.BlazorServer.UsingAzureKeyVault", "WeatherApp.BlazorServer.UsingAzureKeyVault.csproj", "{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vishwam.Secrets.AzureKeyVault", "..\..\..\vishwam.components.shared\src\Vishwam.Secrets.AzureKeyVault\Vishwam.Secrets.AzureKeyVault.csproj", "{27AEFBF0-611C-1936-6BAD-B5F15C1443EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27AEFBF0-611C-1936-6BAD-B5F15C1443EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AEFBF0-611C-1936-6BAD-B5F15C1443EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AEFBF0-611C-1936-6BAD-B5F15C1443EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AEFBF0-611C-1936-6BAD-B5F15C1443EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
