@@ -3,7 +3,7 @@ namespace WeatherApp.RestApi.UsingRedisCache.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController(IRedisCacheService redisCacheService,
+public class WeatherForecastController(ICacheService cacheService,
     ILogger<WeatherForecastController> logger) : ControllerBase
 {  
     [HttpGet("{city}")]
@@ -12,7 +12,7 @@ public class WeatherForecastController(IRedisCacheService redisCacheService,
         try
         {
             var cacheKey = $"weather-{city}";
-            var cachedWeather = await redisCacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
+            var cachedWeather = await cacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
 
             if (cachedWeather != null)
             {
@@ -29,7 +29,7 @@ public class WeatherForecastController(IRedisCacheService redisCacheService,
             };
 
             // Cache the weather data
-            await redisCacheService.SetAsync(cacheKey, weatherForecastRespData, TimeSpan.FromMinutes(10));           
+            await cacheService.SetAsync(cacheKey, weatherForecastRespData, sliding: TimeSpan.FromMinutes(10));           
             return weatherForecastRespData;
         }
         catch (Exception ex)
@@ -43,13 +43,13 @@ public class WeatherForecastController(IRedisCacheService redisCacheService,
     {
         try
         {
-            var keys = await redisCacheService.GetKeysAsync("weather-*");
+            var keys = await cacheService.GetKeysAsync("weather-*");
 
             var results = new List<GetWeatherForecastResponse>();
 
             foreach (var key in keys)
             {
-                var item = await redisCacheService.GetAsync<GetWeatherForecastResponse>(key);
+                var item = await cacheService.GetAsync<GetWeatherForecastResponse>(key);
                 if (item != null)
                     results.Add(item);
             }
