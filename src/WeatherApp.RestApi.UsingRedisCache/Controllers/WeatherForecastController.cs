@@ -9,29 +9,59 @@ public class WeatherForecastController(IRedisCacheService redisCacheService,
     [HttpGet("{city}")]
     public async Task<GetWeatherForecastResponse> Get(string city)
     {
-        var cacheKey = $"weather-{city}";
-        var cachedWeather = await redisCacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
-
-        if (cachedWeather!=null)
+        try
         {
-            return cachedWeather;
-        }
+            var cacheKey = $"weather-{city}";
+            var cachedWeather = await redisCacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
 
-        // Simulate fetching weather data from an external service
-        IEnumerable<WeatherForecast> weatherForecastData= GetWeatherForecastData();
-        GetWeatherForecastResponse weatherForecastRespData = new()
-                        {
-                            City = city,
-                            ForecastTime = DateTime.Now,
-                            WeatherForecasts = weatherForecastData
-                        };
-           
-        // Cache the weather data
-        await redisCacheService.SetAsync(cacheKey, weatherForecastRespData, TimeSpan.FromMinutes(10));
-        
-        return weatherForecastRespData;
+            if (cachedWeather != null)
+            {
+                return cachedWeather;
+            }
+
+            // Simulate fetching weather data from an external service
+            IEnumerable<WeatherForecast> weatherForecastData = GetWeatherForecastData();
+            GetWeatherForecastResponse weatherForecastRespData = new()
+            {
+                City = city,
+                ForecastTime = DateTime.Now,
+                WeatherForecasts = weatherForecastData
+            };
+
+            // Cache the weather data
+            await redisCacheService.SetAsync(cacheKey, weatherForecastRespData, TimeSpan.FromMinutes(10));           
+            return weatherForecastRespData;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
 
+    [HttpGet("all")] // GET /api/weatherforecast/all
+    public async Task<IActionResult> GetAll()
+    {
+        try
+        {
+            var keys = await redisCacheService.GetKeysAsync("weather-*");
+
+            var results = new List<GetWeatherForecastResponse>();
+
+            foreach (var key in keys)
+            {
+                var item = await redisCacheService.GetAsync<GetWeatherForecastResponse>(key);
+                if (item != null)
+                    results.Add(item);
+            }
+
+            return Ok(results);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Error retrieving keys from Redis");
+            return StatusCode(500, "Internal server error");
+        }
+    }
     private WeatherForecast[] GetWeatherForecastData()
     {
         try
