@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp.RestApi.UsingRedisCache", "WeatherApp.RestApi.UsingRedisCache.csproj", "{0FE0CE70-5F5B-4BC8-807B-B4657F98DF8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp.RestApi.UsingCache", "WeatherApp.RestApi.UsingCache.csproj", "{0FE0CE70-5F5B-4BC8-807B-B4657F98DF8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

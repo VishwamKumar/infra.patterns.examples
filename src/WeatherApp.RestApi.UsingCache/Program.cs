@@ -6,7 +6,7 @@ builder.Services.AddSwaggerGen();
 
 // Add Redis cache service with authentication
 
-builder.Services.AddRedisCacheService(builder.Configuration);
+builder.Services.AddCachingService(builder.Configuration);
 
 var app = builder.Build();
 

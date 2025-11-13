@@ -1,17 +1,17 @@
 
-namespace WeatherApp.RestApi.UsingRedisCache.Controllers;
+namespace WeatherApp.RestApi.UsingCache.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController(ICacheService cacheService,
     ILogger<WeatherForecastController> logger) : ControllerBase
-{  
+{
+    private readonly string  cacheKey = "weather-Today";
     [HttpGet("{city}")]
     public async Task<GetWeatherForecastResponse> Get(string city)
     {
         try
         {
-            var cacheKey = $"weather-{city}";
             var cachedWeather = await cacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
 
             if (cachedWeather != null)
@@ -43,18 +43,9 @@ public class WeatherForecastController(ICacheService cacheService,
     {
         try
         {
-            var keys = await cacheService.GetKeysAsync("weather-*");
+            var cachedWeather = await cacheService.GetAsync<GetWeatherForecastResponse>(cacheKey);
 
-            var results = new List<GetWeatherForecastResponse>();
-
-            foreach (var key in keys)
-            {
-                var item = await cacheService.GetAsync<GetWeatherForecastResponse>(key);
-                if (item != null)
-                    results.Add(item);
-            }
-
-            return Ok(results);
+            return Ok(cachedWeather);
         }
         catch (Exception ex)
         {
