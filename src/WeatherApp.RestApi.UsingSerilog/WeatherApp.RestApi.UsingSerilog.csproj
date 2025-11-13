@@ -15,4 +15,8 @@
     <Folder Include="logs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\vishwam.components.shared\src\Vishwam.Logging.Core\Vishwam.Logging.Core.csproj" />
+  </ItemGroup>
+
 </Project>

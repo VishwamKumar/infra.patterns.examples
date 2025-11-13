@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.RestApi.UsingSerilog", "WeatherApp.RestApi.UsingSerilog.csproj", "{5B578D5C-EB26-4514-9182-CB8F09B46247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vishwam.Logging.Core", "..\..\..\vishwam.components.shared\src\Vishwam.Logging.Core\Vishwam.Logging.Core.csproj", "{76A19490-C6F4-A9D5-21B3-13C95A01342B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5B578D5C-EB26-4514-9182-CB8F09B46247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B578D5C-EB26-4514-9182-CB8F09B46247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B578D5C-EB26-4514-9182-CB8F09B46247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A19490-C6F4-A9D5-21B3-13C95A01342B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A19490-C6F4-A9D5-21B3-13C95A01342B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A19490-C6F4-A9D5-21B3-13C95A01342B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A19490-C6F4-A9D5-21B3-13C95A01342B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

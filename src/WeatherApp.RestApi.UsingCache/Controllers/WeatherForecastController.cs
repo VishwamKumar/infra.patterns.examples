@@ -29,7 +29,7 @@ public class WeatherForecastController(ICacheService cacheService,
             };
 
             // Cache the weather data
-            await cacheService.SetAsync(cacheKey, weatherForecastRespData, sliding: TimeSpan.FromMinutes(10));           
+            await cacheService.SetAsync(cacheKey, weatherForecastRespData, slidingExpiration: TimeSpan.FromMinutes(10));           
             return weatherForecastRespData;
         }
         catch (Exception ex)
