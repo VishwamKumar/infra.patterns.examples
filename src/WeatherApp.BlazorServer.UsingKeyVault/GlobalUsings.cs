@@ -1,2 +1,2 @@
-﻿global using WeatherApp.BlazorServer.UsingAzureKeyVault.Components;
-global using Vishwam.Secrets.AzureKeyVault;
+﻿global using WeatherApp.BlazorServer.UsingKeyVault.Components;
+global using Vishwam.Secrets.Core;
