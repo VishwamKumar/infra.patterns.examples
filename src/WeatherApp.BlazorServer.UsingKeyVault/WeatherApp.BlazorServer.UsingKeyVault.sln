@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.BlazorServer.UsingKeyVault", "WeatherApp.BlazorServer.UsingKeyVault.csproj", "{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vishwam.Caching.Core", "..\..\..\vishwam.components.shared\src\Vishwam.Caching.Core\Vishwam.Caching.Core.csproj", "{FF84696D-EE4C-B4FF-A32D-D10A3C1A0F03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vishwam.Secrets.Core", "..\..\..\vishwam.components.shared\src\Vishwam.Secrets.Core\Vishwam.Secrets.Core.csproj", "{6FB61B43-F0E5-590B-DF24-AA4BCD9129FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F201CC-EEC8-4312-AD0F-217F358F0EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF84696D-EE4C-B4FF-A32D-D10A3C1A0F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF84696D-EE4C-B4FF-A32D-D10A3C1A0F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF84696D-EE4C-B4FF-A32D-D10A3C1A0F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF84696D-EE4C-B4FF-A32D-D10A3C1A0F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB61B43-F0E5-590B-DF24-AA4BCD9129FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB61B43-F0E5-590B-DF24-AA4BCD9129FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB61B43-F0E5-590B-DF24-AA4BCD9129FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB61B43-F0E5-590B-DF24-AA4BCD9129FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

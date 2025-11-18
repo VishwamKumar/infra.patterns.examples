@@ -15,7 +15,8 @@ public class WeatherForecastController(ILogTypeLogger<WeatherForecastController>
     {
         try
         {
-            logger.Info(LogType.Application, "Method: {Method} - Get Weather Info", Request.Method);
+            string testEmailPiiRedacted = "vishwa.kumar@slchq.com";
+            logger.Info(LogType.Application, "Method: {Method}, Email: {Email} - Get Weather Info", Request.Method, testEmailPiiRedacted);
 
             var response = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -24,7 +25,7 @@ public class WeatherForecastController(ILogTypeLogger<WeatherForecastController>
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             }).ToArray();
 
-            logger.Info(LogType.Transaction, "Method: {Method} - Response Body: {@Response}", Request.Method, response);
+            logger.Info(LogType.Transaction, "Method: {Method}, Email: {Email}  - Response Body: {@Response}", Request.Method, testEmailPiiRedacted, response);
 
             return response;
         }
